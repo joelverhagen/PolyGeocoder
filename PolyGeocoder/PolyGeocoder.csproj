@@ -87,6 +87,6 @@
     <Time>
       <Output TaskParameter="Year" PropertyName="Year" />
     </Time>
-    <AssemblyInfo CodeLanguage="CS" OutputFile="Properties\AssemblyInfo.cs" AssemblyTitle="PolyGeocoder" AssemblyDescription="" AssemblyCompany="" AssemblyProduct="PolyGeocoder" AssemblyCopyright="Copyright (c) $(Year). All rights reserved." ComVisible="false" CLSCompliant="false" AssemblyInformationalVersion="$(Major).$(Minor).$(Build).$(Revision)" AssemblyVersion="$(Major).$(Minor).$(Build)" AssemblyFileVersion="$(Major).$(Minor).$(Build)" />
+    <AssemblyInfo CodeLanguage="CS" OutputFile="Properties\AssemblyInfo.cs" AssemblyTitle="PolyGeocoder" AssemblyDescription="" AssemblyCompany="" AssemblyProduct="PolyGeocoder" AssemblyCopyright="Copyright (c) $(Year). All rights reserved." ComVisible="false" CLSCompliant="true" AssemblyInformationalVersion="$(Major).$(Minor).$(Build).$(Revision)" AssemblyVersion="$(Major).$(Minor).$(Build)" AssemblyFileVersion="$(Major).$(Minor).$(Build)" />
   </Target>
 </Project>

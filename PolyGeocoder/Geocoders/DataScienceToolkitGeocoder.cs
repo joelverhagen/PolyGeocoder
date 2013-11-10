@@ -1,0 +1,53 @@
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web;
+using Newtonsoft.Json;
+using PolyGeocoder.Support;
+using Location = PolyGeocoder.Geocoders.JsonEntities.DataScienceToolkit.Location;
+
+namespace PolyGeocoder.Geocoders
+{
+    public class DataScienceToolkitGeocoder : ISimpleGeocoder
+    {
+        private const string PublicEndpoint = "http://www.datasciencetoolkit.org/street2coordinates";
+        private readonly IClient _client;
+        private readonly string _endpoint;
+
+        public DataScienceToolkitGeocoder(IClient client)
+            : this(client, PublicEndpoint)
+        {
+        }
+
+        public DataScienceToolkitGeocoder(IClient client, string endpoint)
+        {
+            _client = client;
+            _endpoint = endpoint.TrimEnd('/') + '/';
+        }
+
+        public async Task<Response> GeocodeAsync(string request)
+        {
+            // build the request URI
+            string requestUri = _endpoint + HttpUtility.UrlEncode(request);
+
+            // get the response
+            ClientResponse clientResponse = await _client.GetAsync(requestUri);
+            string content = Encoding.UTF8.GetString(clientResponse.Content);
+
+            // parse the response
+            var response = JsonConvert.DeserializeObject<IDictionary<string, Location>>(content);
+
+            // project the response
+            return new Response
+            {
+                Locations = response.Select(p => new Support.Location
+                {
+                    Name = p.Key,
+                    Latitude = p.Value.Latitude,
+                    Longitude = p.Value.Longitude
+                }).ToArray()
+            };
+        }
+    }
+}

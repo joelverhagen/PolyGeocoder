@@ -50,12 +50,24 @@ namespace PolyGeocoder.Support
 
         public async Task<ClientResponse> GetAsync(string requestUri)
         {
-            return await GetClientResponseAsync(_client.GetAsync(requestUri));
+            ClientResponse response = await GetClientResponseAsync(_client.GetAsync(requestUri));
+            return await AfterGetAsync(requestUri, response);
         }
 
         public async Task<ClientResponse> PostAsync(string requestUri, HttpContent content)
         {
-            return await GetClientResponseAsync(_client.PostAsync(requestUri, content));
+            ClientResponse response = await GetClientResponseAsync(_client.PostAsync(requestUri, content));
+            return await AfterPostAsync(requestUri, content, response);
+        }
+
+        protected virtual Task<ClientResponse> AfterGetAsync(string requestUri, ClientResponse clientResponse)
+        {
+            return Task.FromResult(clientResponse);
+        }
+
+        protected virtual Task<ClientResponse> AfterPostAsync(string requestUri, HttpContent content, ClientResponse clientResponse)
+        {
+            return Task.FromResult(clientResponse);
         }
 
         private async Task<ClientResponse> GetClientResponseAsync(Task<HttpResponseMessage> responseTask)

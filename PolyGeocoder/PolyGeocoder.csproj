@@ -48,10 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Geocoders\BingGeocoder.cs" />
     <Compile Include="Geocoders\DataScienceToolkitGeocoder.cs" />
     <Compile Include="Geocoders\GoogleGeocoder.cs" />
+    <Compile Include="Geocoders\JsonEntities\Bing\Bing.cs" />
     <Compile Include="Geocoders\JsonEntities\DataScienceToolkit\DataScienceToolkit.cs" />
+    <Compile Include="Geocoders\JsonEntities\MapQuest\MapQuest.cs" />
     <Compile Include="Geocoders\JsonEntities\OpenStreetMap\Nominatim.cs" />
+    <Compile Include="Geocoders\MapQuestGeocoder.cs" />
     <Compile Include="Support\Client.cs" />
     <Compile Include="Geocoders\OpenStreetMapGeocoder.cs" />
     <Compile Include="Geocoders\JsonEntities\Google\Google.cs" />

@@ -11,7 +11,7 @@ namespace PolyGeocoder.Geocoders
 {
     public class GoogleGeocoder : ISimpleGeocoder
     {
-        private const string EndpointFormat = "https://maps.googleapis.com/maps/api/geocode/xml?sensor=false&address={0}";
+        private const string EndpointFormat = "https://maps.googleapis.com/maps/api/geocode/json?sensor=false&address={0}";
 
         private readonly IClient _client;
 
@@ -29,7 +29,8 @@ namespace PolyGeocoder.Geocoders
             ClientResponse clientResponse = await _client.GetAsync(requestUri);
 
             // parse the response
-            var response = JsonConvert.DeserializeObject<GeocodeResponse>(Encoding.UTF8.GetString(clientResponse.Content));
+            string content = Encoding.UTF8.GetString(clientResponse.Content);
+            var response = JsonConvert.DeserializeObject<GeocodeResponse>(content);
 
             // project the response
             return new Response

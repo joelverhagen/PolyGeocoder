@@ -13,13 +13,13 @@ namespace PolyGeocoder.Geocoders
 {
     public class OpenStreetMapGeocoder : ISimpleGeocoder, IStructuredGeocoder
     {
-        public const string PublicOpenScreetMapEndpoint = "http://nominatim.openstreetmap.org/search";
-        public const string PublicMapQuestEndpoint = "http://open.mapquestapi.com/nominatim/v1/search";
+        public const string OpenScreetMapEndpoint = "http://nominatim.openstreetmap.org/search";
+        public const string MapQuestEndpoint = "http://open.mapquestapi.com/nominatim/v1/search";
 
         private readonly IClient _client;
         private readonly string _endpoint;
 
-        public OpenStreetMapGeocoder(IClient client) : this(client, PublicOpenScreetMapEndpoint)
+        public OpenStreetMapGeocoder(IClient client) : this(client, OpenScreetMapEndpoint)
         {
         }
 

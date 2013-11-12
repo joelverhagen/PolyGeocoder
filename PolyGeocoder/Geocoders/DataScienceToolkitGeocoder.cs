@@ -11,12 +11,12 @@ namespace PolyGeocoder.Geocoders
 {
     public class DataScienceToolkitGeocoder : ISimpleGeocoder
     {
-        public const string PublicDataScienceToolkitEndpoint = "http://www.datasciencetoolkit.org/street2coordinates";
+        public const string Endpoint = "http://www.datasciencetoolkit.org/street2coordinates";
 
         private readonly IClient _client;
         private readonly string _endpoint;
 
-        public DataScienceToolkitGeocoder(IClient client) : this(client, PublicDataScienceToolkitEndpoint)
+        public DataScienceToolkitGeocoder(IClient client) : this(client, Endpoint)
         {
         }
 

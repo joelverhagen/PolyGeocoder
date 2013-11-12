@@ -12,14 +12,14 @@ namespace PolyGeocoder.Geocoders
 {
     public class MapQuestGeocoder : ISimpleGeocoder
     {
-        public const string PublicLicensedEndpoint = "http://www.mapquestapi.com/geocoding/v1/address";
-        public const string PublicOpenEndpoint = "http://open.mapquestapi.com/geocoding/v1/address";
+        public const string LicensedEndpoint = "http://www.mapquestapi.com/geocoding/v1/address";
+        public const string OpenEndpoint = "http://open.mapquestapi.com/geocoding/v1/address";
 
         private readonly string _apiKey;
         private readonly IClient _client;
         private readonly string _endpoint;
 
-        public MapQuestGeocoder(IClient client, string apiKey) : this(client, apiKey, PublicLicensedEndpoint)
+        public MapQuestGeocoder(IClient client, string apiKey) : this(client, apiKey, LicensedEndpoint)
         {
         }
 

@@ -54,7 +54,7 @@
     <Compile Include="Geocoders\JsonEntities\Bing\Bing.cs" />
     <Compile Include="Geocoders\JsonEntities\DataScienceToolkit\DataScienceToolkit.cs" />
     <Compile Include="Geocoders\JsonEntities\MapQuest\MapQuest.cs" />
-    <Compile Include="Geocoders\JsonEntities\OpenStreetMap\Nominatim.cs" />
+    <Compile Include="Geocoders\JsonEntities\OpenStreetMap\OpenStreetMap.cs" />
     <Compile Include="Geocoders\MapQuestGeocoder.cs" />
     <Compile Include="Support\Client.cs" />
     <Compile Include="Geocoders\OpenStreetMapGeocoder.cs" />

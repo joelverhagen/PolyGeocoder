@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace PolyGeocoder.Geocoders.JsonEntities.Google
+namespace PolyGeocoder.Geocoders.ExternalEntities.Google
 {
     public class AddressComponent
     {

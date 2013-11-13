@@ -3,7 +3,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using Newtonsoft.Json;
-using PolyGeocoder.Geocoders.JsonEntities.Google;
+using PolyGeocoder.Geocoders.ExternalEntities.Google;
 using PolyGeocoder.Support;
 using Location = PolyGeocoder.Support.Location;
 

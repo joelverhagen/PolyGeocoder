@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using Newtonsoft.Json;
-using PolyGeocoder.Geocoders.JsonEntities.OpenStreetMap;
+using PolyGeocoder.Geocoders.ExternalEntities.OpenStreetMap;
 using PolyGeocoder.Support;
 
 namespace PolyGeocoder.Geocoders

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Newtonsoft.Json;
 using PolyGeocoder.Support;
-using Location = PolyGeocoder.Geocoders.JsonEntities.MapQuest.Location;
+using Location = PolyGeocoder.Geocoders.ExternalEntities.MapQuest.Location;
 
 namespace PolyGeocoder.Geocoders
 {
@@ -45,7 +45,7 @@ namespace PolyGeocoder.Geocoders
 
             // parse the response
             string content = Encoding.UTF8.GetString(clientResponse.Content);
-            var response = JsonConvert.DeserializeObject<JsonEntities.MapQuest.Response>(content);
+            var response = JsonConvert.DeserializeObject<ExternalEntities.MapQuest.Response>(content);
 
             // project the response
             return new Response

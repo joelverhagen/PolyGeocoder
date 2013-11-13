@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace PolyGeocoder.Geocoders.JsonEntities.OpenStreetMap
+namespace PolyGeocoder.Geocoders.ExternalEntities.OpenStreetMap
 {
     public class Address
     {

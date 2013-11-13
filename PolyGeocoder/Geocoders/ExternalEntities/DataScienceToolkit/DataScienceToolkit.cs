@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace PolyGeocoder.Geocoders.JsonEntities.DataScienceToolkit
+namespace PolyGeocoder.Geocoders.ExternalEntities.DataScienceToolkit
 {
     public class Location
     {

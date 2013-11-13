@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Newtonsoft.Json;
 using PolyGeocoder.Support;
-using Location = PolyGeocoder.Geocoders.JsonEntities.DataScienceToolkit.Location;
+using Location = PolyGeocoder.Geocoders.ExternalEntities.DataScienceToolkit.Location;
 
 namespace PolyGeocoder.Geocoders
 {

@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{97C699
 		.build\MSBuild.Community.Tasks.targets = .build\MSBuild.Community.Tasks.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolyGeocoder.Test", "PolyGeocoder.Test\PolyGeocoder.Test.csproj", "{469436E1-98A7-46CF-A66B-7CFCCE41B2DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{98F054D7-7C4C-4F85-8668-D4C77FB29AFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98F054D7-7C4C-4F85-8668-D4C77FB29AFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98F054D7-7C4C-4F85-8668-D4C77FB29AFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{469436E1-98A7-46CF-A66B-7CFCCE41B2DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{469436E1-98A7-46CF-A66B-7CFCCE41B2DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{469436E1-98A7-46CF-A66B-7CFCCE41B2DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{469436E1-98A7-46CF-A66B-7CFCCE41B2DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

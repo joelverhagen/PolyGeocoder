@@ -40,7 +40,7 @@ namespace PolyGeocoder.Geocoders
 
             // parse the response
             string content = Encoding.UTF8.GetString(clientResponse.Content);
-            var response = JsonConvert.DeserializeObject<JsonEntities.Bing.Response>(content);
+            var response = JsonConvert.DeserializeObject<ExternalEntities.Bing.Response>(content);
 
             // project the response
             return new Response

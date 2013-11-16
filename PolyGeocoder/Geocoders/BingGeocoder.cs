@@ -14,12 +14,12 @@ namespace PolyGeocoder.Geocoders
         private const string Endpoint = "http://dev.virtualearth.net/REST/v1/Locations";
 
         private readonly IClient _client;
-        private readonly string _apiKey;
+        private readonly string _key;
 
-        public BingGeocoder(IClient client, string apiKey)
+        public BingGeocoder(IClient client, string key)
         {
             _client = client;
-            _apiKey = apiKey;
+            _key = key;
         }
 
         public async Task<Response> GeocodeAsync(string request)
@@ -32,7 +32,7 @@ namespace PolyGeocoder.Geocoders
             query["inclnb"] = "1";
             query["incl"] = "queryParse";
             query["maxRes"] = "20";
-            query["key"] = _apiKey;
+            query["key"] = _key;
             builder.Query = query.ToString();
 
             // get the response

@@ -15,18 +15,18 @@ namespace PolyGeocoder.Geocoders
         public const string LicensedEndpoint = "http://www.mapquestapi.com/geocoding/v1/address";
         public const string OpenEndpoint = "http://open.mapquestapi.com/geocoding/v1/address";
 
-        private readonly string _apiKey;
+        private readonly string _key;
         private readonly IClient _client;
         private readonly string _endpoint;
 
-        public MapQuestGeocoder(IClient client, string apiKey) : this(client, apiKey, LicensedEndpoint)
+        public MapQuestGeocoder(IClient client, string key) : this(client, key, LicensedEndpoint)
         {
         }
 
-        public MapQuestGeocoder(IClient client, string apiKey, string endpoint)
+        public MapQuestGeocoder(IClient client, string endpoint, string key)
         {
             _client = client;
-            _apiKey = apiKey;
+            _key = key;
             _endpoint = endpoint;
         }
 
@@ -37,7 +37,7 @@ namespace PolyGeocoder.Geocoders
             NameValueCollection query = HttpUtility.ParseQueryString(builder.Query);
             query["location"] = request;
             query["outFormat"] = "json";
-            query["key"] = _apiKey;
+            query["key"] = _key;
             builder.Query = query.ToString();
 
             // get the response

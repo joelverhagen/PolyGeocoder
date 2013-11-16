@@ -44,7 +44,7 @@ namespace PolyGeocoder.Geocoders
             {
                 Locations = parsedResponse.LocatedAddresses.Select(l => new Location
                 {
-                    Name = GetAddressName(l),
+                    Name = ConstructName(l),
                     Latitude = l.Latitude,
                     Longitude = l.Longitude
                 }).ToArray()
@@ -123,7 +123,7 @@ namespace PolyGeocoder.Geocoders
             };
         }
 
-        private string GetAddressName(Address address)
+        private string ConstructName(Address address)
         {
             string streetName = string.Join(" ", new[]
             {

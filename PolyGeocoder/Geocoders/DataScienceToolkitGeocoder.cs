@@ -44,13 +44,26 @@ namespace PolyGeocoder.Geocoders
             // project the response
             return new Response
             {
-                Locations = response.Select(p => new Support.Location
-                {
-                    Name = p.Key,
-                    Latitude = p.Value.Latitude,
-                    Longitude = p.Value.Longitude
-                }).ToArray()
+                Locations = response
+                    .Where(p => p.Value != null)
+                    .Select(p => new Support.Location
+                    {
+                        Name = ConstructName(p.Value),
+                        Latitude = p.Value.Latitude,
+                        Longitude = p.Value.Longitude
+                    }).ToArray()
             };
+        }
+
+        private string ConstructName(Location location)
+        {
+            return string.Join(", ", new[]
+            {
+                location.StreetAddress,
+                location.Locality,
+                location.Region,
+                location.CountryName
+            });
         }
     }
 }

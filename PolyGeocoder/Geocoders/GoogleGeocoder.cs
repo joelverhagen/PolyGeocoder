@@ -26,7 +26,7 @@ namespace PolyGeocoder.Geocoders
             string requestUri = string.Format(EndpointFormat, HttpUtility.UrlEncode(request));
 
             // get the response
-            ClientResponse clientResponse = await _client.GetAsync(requestUri);
+            ClientResponse clientResponse = await _client.GetAsync(requestUri).ConfigureAwait(false);
 
             // parse the response
             string content = Encoding.UTF8.GetString(clientResponse.Content);

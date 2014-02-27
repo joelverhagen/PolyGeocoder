@@ -41,7 +41,7 @@ namespace PolyGeocoder.Geocoders
             builder.Query = query.ToString();
 
             // get the response
-            ClientResponse clientResponse = await _client.GetAsync(builder.ToString());
+            ClientResponse clientResponse = await _client.GetAsync(builder.ToString()).ConfigureAwait(false);
 
             // parse the response
             string content = Encoding.UTF8.GetString(clientResponse.Content);

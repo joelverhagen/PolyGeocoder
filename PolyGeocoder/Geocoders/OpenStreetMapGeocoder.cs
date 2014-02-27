@@ -36,7 +36,7 @@ namespace PolyGeocoder.Geocoders
             query["q"] = request;
 
             // geocode
-            return await GeocodeAsync(query);
+            return await GeocodeAsync(query).ConfigureAwait(false);
         }
 
         public async Task<Response> GeocodeAsync(StructuredRequest request)
@@ -79,7 +79,7 @@ namespace PolyGeocoder.Geocoders
             }
 
             // geocode
-            return await GeocodeAsync(query);
+            return await GeocodeAsync(query).ConfigureAwait(false);
         }
 
         private async Task<Response> GeocodeAsync(IDictionary<string, string> query)
@@ -97,7 +97,7 @@ namespace PolyGeocoder.Geocoders
             builder.Query = queryObject.ToString();
 
             // get the response
-            ClientResponse clientResponse = await _client.GetAsync(builder.ToString());
+            ClientResponse clientResponse = await _client.GetAsync(builder.ToString()).ConfigureAwait(false);
 
             // parse the response
             string content = Encoding.UTF8.GetString(clientResponse.Content);

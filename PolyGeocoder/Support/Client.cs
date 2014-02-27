@@ -50,14 +50,14 @@ namespace PolyGeocoder.Support
 
         public async Task<ClientResponse> GetAsync(string requestUri)
         {
-            ClientResponse response = await GetClientResponseAsync(_client.GetAsync(requestUri));
-            return await AfterGetAsync(requestUri, response);
+            ClientResponse response = await GetClientResponseAsync(_client.GetAsync(requestUri)).ConfigureAwait(false);
+            return await AfterGetAsync(requestUri, response).ConfigureAwait(false);
         }
 
         public async Task<ClientResponse> PostAsync(string requestUri, HttpContent content)
         {
-            ClientResponse response = await GetClientResponseAsync(_client.PostAsync(requestUri, content));
-            return await AfterPostAsync(requestUri, content, response);
+            ClientResponse response = await GetClientResponseAsync(_client.PostAsync(requestUri, content)).ConfigureAwait(false);
+            return await AfterPostAsync(requestUri, content, response).ConfigureAwait(false);
         }
 
         protected virtual Task<ClientResponse> AfterGetAsync(string requestUri, ClientResponse clientResponse)
@@ -73,11 +73,11 @@ namespace PolyGeocoder.Support
         private async Task<ClientResponse> GetClientResponseAsync(Task<HttpResponseMessage> responseTask)
         {
             // get the response
-            HttpResponseMessage response = await responseTask;
+            HttpResponseMessage response = await responseTask.ConfigureAwait(false);
 
             // get the content
             HttpContent httpContent = response.Content;
-            byte[] content = await httpContent.ReadAsByteArrayAsync();
+            byte[] content = await httpContent.ReadAsByteArrayAsync().ConfigureAwait(false);
 
             // construct the output
             return new ClientResponse

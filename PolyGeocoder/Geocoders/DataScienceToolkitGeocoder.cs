@@ -35,7 +35,7 @@ namespace PolyGeocoder.Geocoders
                 .Replace("%2f", "/");
 
             // get the response
-            ClientResponse clientResponse = await _client.GetAsync(requestUri);
+            ClientResponse clientResponse = await _client.GetAsync(requestUri).ConfigureAwait(false);
             string content = Encoding.UTF8.GetString(clientResponse.Content);
 
             // parse the response

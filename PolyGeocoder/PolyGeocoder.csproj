@@ -83,7 +83,7 @@
   <PropertyGroup>
     <Major>1</Major>
     <Minor>3</Minor>
-    <Patch>1</Patch>
+    <Patch>2</Patch>
   </PropertyGroup>
   <Target Name="Version">
     <GitVersion LocalPath="$(MSBuildProjectDirectory)\..">

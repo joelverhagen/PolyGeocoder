@@ -50,7 +50,7 @@ namespace PolyGeocoder.Geocoders.ExternalEntities.MapQuest
         public Point DisplayPoint { get; set; }
 
         [JsonProperty(PropertyName = "linkId")]
-        public int LinkId { get; set; }
+        public string LinkId { get; set; }
 
         [JsonProperty(PropertyName = "postalCode")]
         public string PostalCode { get; set; }

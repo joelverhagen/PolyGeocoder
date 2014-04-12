@@ -32,8 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -83,8 +83,7 @@
   <PropertyGroup>
     <Major>1</Major>
     <Minor>3</Minor>
-    <Build>0</Build>
-    <Revision>0</Revision>
+    <Patch>1</Patch>
   </PropertyGroup>
   <Target Name="Version">
     <GitVersion LocalPath="$(MSBuildProjectDirectory)\..">
@@ -93,6 +92,6 @@
     <Time>
       <Output TaskParameter="Year" PropertyName="Year" />
     </Time>
-    <AssemblyInfo CodeLanguage="CS" OutputFile="Properties\AssemblyInfo.cs" AssemblyTitle="PolyGeocoder" AssemblyDescription="A generic .NET interface for geocoding, using one of many popular external web services." AssemblyCompany="Joel Verhagen" AssemblyProduct="PolyGeocoder" AssemblyCopyright="Copyright (c) $(Year). All rights reserved." ComVisible="false" CLSCompliant="true" AssemblyInformationalVersion="$(Major).$(Minor).$(Build).$(Revision)" AssemblyVersion="$(Major).$(Minor).$(Build)" AssemblyFileVersion="$(Major).$(Minor).$(Build)" />
+    <AssemblyInfo CodeLanguage="CS" OutputFile="Properties\AssemblyInfo.cs" AssemblyTitle="PolyGeocoder" AssemblyDescription="A generic .NET interface for geocoding, using one of many popular external web services." AssemblyCompany="Joel Verhagen" AssemblyProduct="PolyGeocoder" AssemblyCopyright="Copyright (c) $(Year). All rights reserved." ComVisible="false" CLSCompliant="true" AssemblyInformationalVersion="$(Major).$(Minor).$(Patch).$(Revision)" AssemblyVersion="$(Major).$(Minor).$(Patch)" AssemblyFileVersion="$(Major).$(Minor).$(Patch)" />
   </Target>
 </Project>

@@ -75,12 +75,21 @@ namespace PolyGeocoder.Geocoders.ExternalEntities.MapQuest
 
         [JsonProperty(PropertyName = "adminArea3Type")]
         public string AdminArea3Type { get; set; }
+
+        [JsonProperty(PropertyName = "dragPoint")]
+        public bool DragPoint { get; set; }
     }
 
     public class ProvidedLocation
     {
+        [JsonProperty(PropertyName = "id")]
+        public int Id { get; set; }
+
         [JsonProperty(PropertyName = "location")]
         public string Location { get; set; }
+
+        [JsonProperty(PropertyName = "name")]
+        public string Name { get; set; }
     }
 
     public class Result

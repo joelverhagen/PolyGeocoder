@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Knapcode.PolyGeocoder;
 using Moq;
 
-namespace Knapcode.PolyGeocoder.Test.Geocoders
+namespace Knapcode.PolyGeocoder.Test
 {
     public static class Support
     {

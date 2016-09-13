@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Xunit;
 
-namespace Knapcode.PolyGeocoder.Test.Geocoders
+namespace Knapcode.PolyGeocoder.Test
 {
     public class DataScienceToolkitGeocoderTest
     {

@@ -2,7 +2,7 @@
 using Knapcode.PolyGeocoder.Test.TestSupport;
 using Xunit;
 
-namespace Knapcode.PolyGeocoder.Test.Geocoders
+namespace Knapcode.PolyGeocoder.Test
 {
     public class GoogeGeocoderTest
     {

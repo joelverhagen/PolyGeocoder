@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace PolyGeocoder.Support
+namespace Knapcode.PolyGeocoder.Support
 {
     public interface ISimpleGeocoder
     {

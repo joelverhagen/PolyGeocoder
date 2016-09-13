@@ -6,12 +6,12 @@ using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Knapcode.PolyGeocoder.Geocoders.ExternalEntities.GeocoderDotUs;
+using Knapcode.PolyGeocoder.Support;
 using Microsoft.AspNetCore.WebUtilities;
-using PolyGeocoder.Geocoders.ExternalEntities.GeocoderDotUs;
-using PolyGeocoder.Support;
-using Response = PolyGeocoder.Support.Response;
+using Response = Knapcode.PolyGeocoder.Support.Response;
 
-namespace PolyGeocoder.Geocoders
+namespace Knapcode.PolyGeocoder.Geocoders
 {
     public class GeocoderDotUsGeocoder : ISimpleGeocoder
     {

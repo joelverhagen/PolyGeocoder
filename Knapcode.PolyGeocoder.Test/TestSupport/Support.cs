@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Knapcode.PolyGeocoder.Support;
 using Moq;
-using PolyGeocoder.Support;
 
-namespace PolyGeocoder.Test.Geocoders
+namespace Knapcode.PolyGeocoder.Test.Geocoders
 {
     public static class Support
     {

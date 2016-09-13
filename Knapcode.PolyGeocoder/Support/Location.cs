@@ -1,4 +1,4 @@
-﻿namespace PolyGeocoder.Support
+﻿namespace Knapcode.PolyGeocoder.Support
 {
     public class Location
     {

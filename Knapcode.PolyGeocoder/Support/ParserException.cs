@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PolyGeocoder.Support
+namespace Knapcode.PolyGeocoder.Support
 {
     public class ParserException : Exception
     {

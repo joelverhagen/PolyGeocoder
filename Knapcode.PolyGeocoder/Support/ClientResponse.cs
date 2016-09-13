@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Net.Http.Headers;
 
-namespace PolyGeocoder.Support
+namespace Knapcode.PolyGeocoder.Support
 {
     public class ClientResponse
     {

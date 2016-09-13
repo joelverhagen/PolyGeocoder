@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Knapcode.PolyGeocoder.Geocoders.ExternalEntities.OpenStreetMap;
+using Knapcode.PolyGeocoder.Support;
 using Microsoft.AspNetCore.WebUtilities;
 using Newtonsoft.Json;
-using PolyGeocoder.Geocoders.ExternalEntities.OpenStreetMap;
-using PolyGeocoder.Support;
 
-namespace PolyGeocoder.Geocoders
+namespace Knapcode.PolyGeocoder.Geocoders
 {
     public class OpenStreetMapGeocoder : ISimpleGeocoder, IStructuredGeocoder
     {

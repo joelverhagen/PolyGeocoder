@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace PolyGeocoder.Geocoders.ExternalEntities.MapQuest
+namespace Knapcode.PolyGeocoder.Geocoders.ExternalEntities.MapQuest
 {
     public class Point
     {

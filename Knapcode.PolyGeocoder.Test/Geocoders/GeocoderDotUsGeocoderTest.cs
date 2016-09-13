@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
-using PolyGeocoder.Geocoders;
-using PolyGeocoder.Support;
+using Knapcode.PolyGeocoder.Geocoders;
+using Knapcode.PolyGeocoder.Support;
 using Xunit;
 
-namespace PolyGeocoder.Test.Geocoders
+namespace Knapcode.PolyGeocoder.Test.Geocoders
 {
     public class GeocoderDotUsGeocoderTest
     {

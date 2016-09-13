@@ -1,4 +1,4 @@
-﻿namespace PolyGeocoder.Geocoders.ExternalEntities.GeocoderDotUs
+﻿namespace Knapcode.PolyGeocoder.Geocoders.ExternalEntities.GeocoderDotUs
 {
     public class Response
     {

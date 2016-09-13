@@ -4,7 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace PolyGeocoder.Support
+namespace Knapcode.PolyGeocoder.Support
 {
     public class Client : IClient
     {

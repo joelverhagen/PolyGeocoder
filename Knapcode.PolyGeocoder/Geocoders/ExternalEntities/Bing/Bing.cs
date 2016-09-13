@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace PolyGeocoder.Geocoders.ExternalEntities.Bing
+namespace Knapcode.PolyGeocoder.Geocoders.ExternalEntities.Bing
 {
     public class Point
     {

@@ -2,12 +2,12 @@
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Knapcode.PolyGeocoder.Support;
 using Microsoft.AspNetCore.WebUtilities;
 using Newtonsoft.Json;
-using PolyGeocoder.Support;
-using Location = PolyGeocoder.Geocoders.ExternalEntities.MapQuest.Location;
+using Location = Knapcode.PolyGeocoder.Geocoders.ExternalEntities.MapQuest.Location;
 
-namespace PolyGeocoder.Geocoders
+namespace Knapcode.PolyGeocoder.Geocoders
 {
     public class MapQuestGeocoder : ISimpleGeocoder
     {

@@ -2,12 +2,12 @@
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Knapcode.PolyGeocoder.Geocoders.ExternalEntities.Google;
+using Knapcode.PolyGeocoder.Support;
 using Newtonsoft.Json;
-using PolyGeocoder.Geocoders.ExternalEntities.Google;
-using PolyGeocoder.Support;
-using Location = PolyGeocoder.Support.Location;
+using Location = Knapcode.PolyGeocoder.Support.Location;
 
-namespace PolyGeocoder.Geocoders
+namespace Knapcode.PolyGeocoder.Geocoders
 {
     public class GoogleGeocoder : ISimpleGeocoder
     {

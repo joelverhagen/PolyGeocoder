@@ -1,8 +1,9 @@
 {
-  "version": "1.0.0-*",
+  "version": "2.0.0-*",
   "buildOptions": {
     "debugType": "portable"
   },
+  "name": "PolyGeocoder",
   "dependencies": {
     "Newtonsoft.Json": "9.0.1",
     "Microsoft.AspNetCore.WebUtilities": "1.0.0"

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using Knapcode.PolyGeocoder.Support;
+using Knapcode.PolyGeocoder;
 using Moq;
 
 namespace Knapcode.PolyGeocoder.Test.Geocoders

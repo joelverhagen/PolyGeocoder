@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web;
 using Newtonsoft.Json;
 using PolyGeocoder.Support;
 using Location = PolyGeocoder.Geocoders.ExternalEntities.DataScienceToolkit.Location;
@@ -30,7 +29,7 @@ namespace PolyGeocoder.Geocoders
         public async Task<Response> GeocodeAsync(string request)
         {
             // build the request URI
-            string requestUri = _endpoint + (HttpUtility.UrlEncode(request) ?? String.Empty)
+            string requestUri = _endpoint + (Uri.EscapeDataString(request) ?? string.Empty)
                 .Replace("%2F", "/") // Data Science Toolkit expects the forward slashes to be plaintext
                 .Replace("%2f", "/");
 

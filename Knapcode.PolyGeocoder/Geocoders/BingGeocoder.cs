@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Specialized;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web;
+using Microsoft.AspNetCore.WebUtilities;
 using Newtonsoft.Json;
 using PolyGeocoder.Support;
 
@@ -25,21 +25,20 @@ namespace PolyGeocoder.Geocoders
         public async Task<Response> GeocodeAsync(string request)
         {
             // generate the request URI
-            var builder = new UriBuilder(Endpoint);
-            NameValueCollection query = HttpUtility.ParseQueryString(builder.Query);
+            var query = new Dictionary<string, string>();
             query["q"] = request;
             query["o"] = "json";
             query["inclnb"] = "1";
             query["incl"] = "queryParse";
             query["maxRes"] = "20";
             query["key"] = _key;
-            builder.Query = query.ToString();
+            var requestUri = QueryHelpers.AddQueryString(Endpoint, query);
 
             // get the response
-            ClientResponse clientResponse = await _client.GetAsync(builder.ToString()).ConfigureAwait(false);
+            ClientResponse clientResponse = await _client.GetAsync(requestUri).ConfigureAwait(false);
 
             // parse the response
-            string content = Encoding.UTF8.GetString(clientResponse.Content);
+            string content = Encoding.UTF8.GetString(clientResponse.Content, 0, clientResponse.Content.Length);
             var response = JsonConvert.DeserializeObject<ExternalEntities.Bing.Response>(content);
 
             // project the response

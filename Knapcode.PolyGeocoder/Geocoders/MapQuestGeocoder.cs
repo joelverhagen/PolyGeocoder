@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Specialized;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web;
+using Microsoft.AspNetCore.WebUtilities;
 using Newtonsoft.Json;
 using PolyGeocoder.Support;
 using Location = PolyGeocoder.Geocoders.ExternalEntities.MapQuest.Location;
@@ -33,15 +32,14 @@ namespace PolyGeocoder.Geocoders
         public async Task<Response> GeocodeAsync(string request)
         {
             // generate the request URI
-            var builder = new UriBuilder(_endpoint);
-            NameValueCollection query = HttpUtility.ParseQueryString(builder.Query);
+            var query = new Dictionary<string, string>();
             query["location"] = request;
             query["outFormat"] = "json";
             query["key"] = _key;
-            builder.Query = query.ToString();
+            var requestUri = QueryHelpers.AddQueryString(_endpoint, query);
 
             // get the response
-            ClientResponse clientResponse = await _client.GetAsync(builder.ToString()).ConfigureAwait(false);
+            ClientResponse clientResponse = await _client.GetAsync(requestUri).ConfigureAwait(false);
 
             // parse the response
             string content = Encoding.UTF8.GetString(clientResponse.Content);

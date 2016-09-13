@@ -13,11 +13,10 @@ namespace PolyGeocoder.Support
 
         public Client()
         {
-            _client = new HttpClient(new WebRequestHandler
+            _client = new HttpClient(new HttpClientHandler
             {
                 AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip,
-                AllowAutoRedirect = false,
-                AllowPipelining = true,
+                AllowAutoRedirect = false
             });
         }
 

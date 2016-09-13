@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web;
+using Microsoft.AspNetCore.WebUtilities;
 using Newtonsoft.Json;
 using PolyGeocoder.Geocoders.ExternalEntities.OpenStreetMap;
 using PolyGeocoder.Support;
@@ -86,18 +85,18 @@ namespace PolyGeocoder.Geocoders
         {
             // build the request URI
             var builder = new UriBuilder(_endpoint);
-            NameValueCollection queryObject = HttpUtility.ParseQueryString(builder.Query);
+            var resultingQuery = new Dictionary<string, string>();
             foreach (string key in query.Keys)
             {
-                queryObject[key] = query[key];
+                resultingQuery[key] = query[key];
             }
-            queryObject["format"] = "jsonv2";
-            queryObject["polygon"] = "1";
-            queryObject["addressdetails"] = "1";
-            builder.Query = queryObject.ToString();
+            resultingQuery["format"] = "jsonv2";
+            resultingQuery["polygon"] = "1";
+            resultingQuery["addressdetails"] = "1";
+            var requestUri = QueryHelpers.AddQueryString(_endpoint, resultingQuery);
 
             // get the response
-            ClientResponse clientResponse = await _client.GetAsync(builder.ToString()).ConfigureAwait(false);
+            ClientResponse clientResponse = await _client.GetAsync(requestUri).ConfigureAwait(false);
 
             // parse the response
             string content = Encoding.UTF8.GetString(clientResponse.Content);

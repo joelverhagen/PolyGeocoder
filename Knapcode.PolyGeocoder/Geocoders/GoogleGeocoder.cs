@@ -1,7 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web;
 using Newtonsoft.Json;
 using PolyGeocoder.Geocoders.ExternalEntities.Google;
 using PolyGeocoder.Support;
@@ -23,7 +23,7 @@ namespace PolyGeocoder.Geocoders
         public async Task<Response> GeocodeAsync(string request)
         {
             // generate the request URI
-            string requestUri = string.Format(EndpointFormat, HttpUtility.UrlEncode(request));
+            string requestUri = string.Format(EndpointFormat, Uri.EscapeDataString(request));
 
             // get the response
             ClientResponse clientResponse = await _client.GetAsync(requestUri).ConfigureAwait(false);

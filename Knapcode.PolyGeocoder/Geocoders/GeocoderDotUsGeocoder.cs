@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Web;
+using Microsoft.AspNetCore.WebUtilities;
 using PolyGeocoder.Geocoders.ExternalEntities.GeocoderDotUs;
 using PolyGeocoder.Support;
 using Response = PolyGeocoder.Support.Response;
@@ -27,15 +26,19 @@ namespace PolyGeocoder.Geocoders
 
         public async Task<Response> GeocodeAsync(string request)
         {
+            if (request == null)
+            {
+                throw new ArgumentNullException(nameof(request));
+            }
+
             // generate the request URI
-            var builder = new UriBuilder(Endpoint);
-            NameValueCollection query = HttpUtility.ParseQueryString(builder.Query);
+            var query = new Dictionary<string, string>();
             query["parse_address"] = "1";
             query["address"] = request;
-            builder.Query = query.ToString();
+            var requestUri = QueryHelpers.AddQueryString(Endpoint, query);
 
             // get the response
-            ClientResponse clientResponse = await _client.GetAsync(builder.ToString()).ConfigureAwait(false);
+            ClientResponse clientResponse = await _client.GetAsync(requestUri).ConfigureAwait(false);
 
             // parse the response
             ExternalEntities.GeocoderDotUs.Response parsedResponse = ParseResponse(clientResponse);

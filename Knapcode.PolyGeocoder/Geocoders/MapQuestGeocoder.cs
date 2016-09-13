@@ -18,7 +18,7 @@ namespace Knapcode.PolyGeocoder.Geocoders
         private readonly IClient _client;
         private readonly string _endpoint;
 
-        public MapQuestGeocoder(IClient client, string key) : this(client, key, LicensedEndpoint)
+        public MapQuestGeocoder(IClient client, string key) : this(client, LicensedEndpoint, key)
         {
         }
 

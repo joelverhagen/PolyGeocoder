@@ -10,7 +10,10 @@
     "Knapcode.PolyGeocoder": {
       "target": "project"
     },
-    "Moq": "4.6.38-alpha"
+    "Moq": "4.6.38-alpha",
+    "Microsoft.Extensions.Configuration": "1.0.0",
+    "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0",
+    "Microsoft.Extensions.Configuration.Json": "1.0.0"
   },
   "testRunner": "xunit",
   "frameworks": {

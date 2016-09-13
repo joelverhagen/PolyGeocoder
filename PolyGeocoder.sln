@@ -10,9 +10,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Knapcode.PolyGeocoder", "Knapcode.PolyGeocoder\Knapcode.PolyGeocoder.xproj", "{FCD9397A-A2AE-4BBC-AA8F-29F2440CF0BE}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Knapcode.PolyGeocoder", "src\Knapcode.PolyGeocoder\Knapcode.PolyGeocoder.xproj", "{FCD9397A-A2AE-4BBC-AA8F-29F2440CF0BE}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Knapcode.PolyGeocoder.Test", "Knapcode.PolyGeocoder.Test\Knapcode.PolyGeocoder.Test.xproj", "{0ED0D572-D7E8-4D50-A9B0-1A0D5DFF842F}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Knapcode.PolyGeocoder.Test", "test\Knapcode.PolyGeocoder.Test\Knapcode.PolyGeocoder.Test.xproj", "{0ED0D572-D7E8-4D50-A9B0-1A0D5DFF842F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{63EE0398-803D-4DC6-BBE8-84E3DB68F60F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{8E28B127-0E0F-40F3-9633-D91D4CD2A50C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,5 +35,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FCD9397A-A2AE-4BBC-AA8F-29F2440CF0BE} = {63EE0398-803D-4DC6-BBE8-84E3DB68F60F}
+		{0ED0D572-D7E8-4D50-A9B0-1A0D5DFF842F} = {8E28B127-0E0F-40F3-9633-D91D4CD2A50C}
 	EndGlobalSection
 EndGlobal
